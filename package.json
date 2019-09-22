@@ -1,0 +1,44 @@
+{
+  "name": "@oonum/id-factory",
+  "version": "0.1.0",
+  "description": "Nodejs module for making friendlier unique IDs: base32(uuid.v4())",
+  "main": "index.js",
+  "scripts": {
+    "preversion": "npm run build",
+    "prebuild": "npm run lint",
+    "build": "tsc --build tsconfig.json",
+    "ci": "npm run test",
+    "docs": "typedoc --readme README.md --out docs src",
+    "lint": "eslint . --ext .js,.ts,.json",
+    "pretest": "npm run build",
+    "test": "jest",
+    "test:watch": "jest --watchAll"
+  },
+  "keywords": [],
+  "author": "developers@oonum.com",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^24.0.18",
+    "@types/jsonwebtoken": "^8.3.4",
+    "@types/node": "^12.7.5",
+    "@types/uuid": "^3.4.5",
+    "@typescript-eslint/eslint-plugin": "^2.3.0",
+    "@typescript-eslint/parser": "^2.3.0",
+    "eslint": "^6.4.0",
+    "eslint-config-prettier": "^6.3.0",
+    "eslint-import-resolver-typescript": "^1.1.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jest": "^22.17.0",
+    "eslint-plugin-json": "^1.4.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "jest": "^24.9.0",
+    "prettier": "^1.18.2",
+    "ts-jest": "^24.1.0",
+    "typedoc": "^0.15.0",
+    "typescript": "^3.6.3"
+  },
+  "dependencies": {
+    "base32": "0.0.6",
+    "uuid": "^3.3.3"
+  }
+}
