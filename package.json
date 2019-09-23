@@ -2,7 +2,8 @@
   "name": "@oonum/id-factory",
   "version": "1.0.0",
   "description": "Nodejs module for making friendlier unique IDs: base32(uuid.v4())",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "preversion": "npm run build",
     "prebuild": "npm run lint",
