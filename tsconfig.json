@@ -6,6 +6,7 @@
     "noImplicitAny": true,
     "moduleResolution": "node",
     "sourceMap": true,
+    "declaration": true,
     "outDir": "dist",
     "baseUrl": ".",
     "paths": {
@@ -15,7 +16,6 @@
       ]
     }
   },
-  "declaration": true,
   "include": [
     "src/**/*"
   ]
