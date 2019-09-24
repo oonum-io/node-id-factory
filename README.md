@@ -1,6 +1,6 @@
 # Friend(lier) Unique IDs
 
-Nodejs module for making friendlier unique IDs: equivalent to `base32(uuid.v4())`
+Nodejs module for making friendlier unique IDs: equivalent to `base62(uuid.v4())`
 
 ## Use
 

@@ -1,6 +1,10 @@
 import { v4 } from 'uuid';
-import { encode } from 'base32';
+import baseX from 'base-x';
+
+const base62 = baseX('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');
 
 export function newId(): string {
-  return encode(v4());
+  const buf = Buffer.alloc(16);
+  const uuid = v4(null, buf);
+  return base62.encode(uuid);
 }

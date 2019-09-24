@@ -19,6 +19,7 @@
   "author": "developers@oonum.com",
   "license": "MIT",
   "devDependencies": {
+    "@types/base-x": "^3.0.0",
     "@types/jest": "^24.0.18",
     "@types/jsonwebtoken": "^8.3.4",
     "@types/node": "^12.7.5",
@@ -39,7 +40,7 @@
     "typescript": "^3.6.3"
   },
   "dependencies": {
-    "base32": "0.0.6",
+    "base-x": "^3.0.7",
     "uuid": "^3.3.3"
   }
 }
