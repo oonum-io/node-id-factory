@@ -12,8 +12,9 @@ describe('function newId()', () => {
     i = -1;
     while (++i < count) {
       const id = list.pop();
-      // console.log(id);
+      console.log(id);
       expect(list.indexOf(id)).toBe(-1);
+
     }
   });
 
