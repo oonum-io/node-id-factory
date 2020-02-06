@@ -28,8 +28,9 @@ jobs:
           command: |
             sudo npm i -g json
             PACKAGE_VERSION="$(cat package.json | json version)"
-            npm --no-git-tag-version version ${PACKAGE_VERSION}-${CIRCLE_BRANCH}.$(git rev-parse --short HEAD)
-            npm publish --tag=${CIRCLE_BRANCH}
+            BRANCH_NAME="${CIRCLE_BRANCH//[^a-z0-9\-]/-}"
+            npm --no-git-tag-version version ${PACKAGE_VERSION}-${BRANCH_NAME}.$(git rev-parse --short HEAD)
+            npm publish --tag=${BRANCH_NAME}
 
   build-prod:
     working_directory: ~/repo
