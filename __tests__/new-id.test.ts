@@ -1,7 +1,6 @@
-import { newId } from '../src'
+import { newId } from '../src';
 
 describe('function newId()', () => {
-
   test('contrived: generates unique ids', () => {
     const list: string[] = [];
     let i = -1;
@@ -14,8 +13,6 @@ describe('function newId()', () => {
       const id = list.pop();
       console.log(id);
       expect(list.indexOf(id)).toBe(-1);
-
     }
   });
-
 });

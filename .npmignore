@@ -1,4 +1,4 @@
-node_modules
+node_modules/
 .env
 .dev
 *.secrets
@@ -7,3 +7,13 @@ devdown
 
 docs
 coverage
+
+tsconfig.json
+jest.config.js
+.eslintrc.js
+.eslintignore
+__tests__/
+.circleci/
+.idea/
+.prettierrc
+.yaml-lint.json

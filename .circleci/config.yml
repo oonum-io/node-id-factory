@@ -3,7 +3,7 @@ jobs:
   build-pre:
     working_directory: ~/repo
     docker:
-      - image: circleci/node:10
+      - image: circleci/node:12
     steps:
       - checkout
       - setup_remote_docker
@@ -26,6 +26,7 @@ jobs:
       - run:
           name: update pre-release npm package
           command: |
+            export DEPLOY_ENV="feature-branch"
             sudo npm i -g json
             PACKAGE_VERSION="$(cat package.json | json version)"
             BRANCH_NAME="${CIRCLE_BRANCH//[^a-z0-9\-]/-}"
@@ -35,7 +36,7 @@ jobs:
   build-prod:
     working_directory: ~/repo
     docker:
-      - image: circleci/node:10
+      - image: circleci/node:12
     steps:
       - checkout
       - setup_remote_docker

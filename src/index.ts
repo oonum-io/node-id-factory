@@ -1,8 +1,8 @@
 import { v4 } from 'uuid';
-import baseX from 'base-x';
+const base = require('base-x');
 
-const ALPHABET = '123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz'
-const base58 = baseX(ALPHABET);
+const ALPHABET = '123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz';
+const base58 = base(ALPHABET);
 
 export function newId(): string {
   const buf = Buffer.alloc(16);

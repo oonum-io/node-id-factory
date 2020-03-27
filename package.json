@@ -5,12 +5,16 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "preversion": "npm run build",
-    "prebuild": "npm run lint",
     "build": "tsc --build tsconfig.json",
     "ci": "npm run test",
     "docs": "typedoc --readme README.md --out docs src",
-    "lint": "eslint . --ext .js,.ts,.json",
+    "lint": "eslint src --ext .js,.ts,.json",
+    "lint-md": "remark --frail .",
+    "lint-yaml": "yamllint **/*.yml **/*.yaml",
+    "postversion": "if test -z \"$DEPLOY_ENV\" ; then git push && git push --tags ; fi",
+    "prebuild": "npm run lint",
+    "prelint": "npm run lint-md && npm run lint-yaml",
+    "preversion": "npm run build",
     "pretest": "npm run build",
     "test": "jest",
     "test:watch": "jest --watchAll"
@@ -19,28 +23,36 @@
   "author": "developers@oonum.com",
   "license": "MIT",
   "devDependencies": {
-    "@types/base-x": "^3.0.0",
-    "@types/jest": "^24.0.18",
-    "@types/jsonwebtoken": "^8.3.4",
-    "@types/node": "^12.7.5",
-    "@types/uuid": "^3.4.5",
-    "@typescript-eslint/eslint-plugin": "^2.3.0",
-    "@typescript-eslint/parser": "^2.3.0",
-    "eslint": "^6.4.0",
-    "eslint-config-prettier": "^6.3.0",
-    "eslint-import-resolver-typescript": "^1.1.1",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-jest": "^22.17.0",
-    "eslint-plugin-json": "^1.4.0",
-    "eslint-plugin-prettier": "^3.1.1",
-    "jest": "^24.9.0",
-    "prettier": "^1.18.2",
-    "ts-jest": "^24.1.0",
-    "typedoc": "^0.15.0",
-    "typescript": "^3.6.3"
+    "@types/jest": "25.1.4",
+    "@types/jsonwebtoken": "8.3.8",
+    "@types/node": "13.9.5",
+    "@types/uuid": "7.0.2",
+    "@typescript-eslint/eslint-plugin": "2.25.0",
+    "@typescript-eslint/parser": "2.25.0",
+    "eslint": "6.8.0",
+    "eslint-config-prettier": "6.10.1",
+    "eslint-import-resolver-typescript": "2.0.0",
+    "eslint-plugin-import": "2.20.1",
+    "eslint-plugin-jest": "23.8.2",
+    "eslint-plugin-json": "2.1.1",
+    "eslint-plugin-prettier": "3.1.2",
+    "jest": "25.2.3",
+    "prettier": "2.0.2",
+    "remark-cli": "7.0.1",
+    "remark-lint": "6.0.6",
+    "remark-preset-lint-recommended": "3.0.4",
+    "ts-jest": "25.2.1",
+    "typedoc": "0.17.3",
+    "typescript": "3.8.3",
+    "yaml-lint": "1.2.4"
   },
   "dependencies": {
-    "base-x": "^3.0.7",
-    "uuid": "^3.3.3"
+    "base-x": "3.0.8",
+    "uuid": "7.0.2"
+  },
+  "remarkConfig": {
+    "plugins": [
+      "remark-preset-lint-recommended"
+    ]
   }
 }
