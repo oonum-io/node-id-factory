@@ -1,4 +1,4 @@
-import { newId } from '../src';
+import newId from '../src';
 
 describe('function newId()', () => {
   test('contrived: generates unique ids', () => {
