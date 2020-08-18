@@ -21,7 +21,7 @@
     "test": "jest",
     "test:watch": "jest --watchAll",
     "preversion": "npm run build",
-    "postversion": "if test -z \"$DEPLOY_ENV\" ; then git push && git push --tags ; fi"
+    "postversion": "bash -c \"if [ -z \"$DEPLOY_ENV\" ]; then git push && git push --tags; fi\""
   },
   "dependencies": {
     "base-x": "3.0.8",
