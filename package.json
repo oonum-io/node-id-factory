@@ -1,6 +1,6 @@
 {
   "name": "@oonum/id-factory",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "Nodejs module for making friendlier unique IDs: base32(uuid.v4())",
   "keywords": [],
   "license": "MIT",
